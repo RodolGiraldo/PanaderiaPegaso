@@ -8,23 +8,37 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
 </head>
 
 <body>
     <div class="card text-center">
         <div class="card-header">
-            <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
+            <div class="nav nav-tabs card-header-tabs row">
+                <div class="nav-item col-5">
+                    <span class="nav-link col-2 active disabled">Pegaso</span>
+                </div>
+                <div class="col-3">
+                    <a class="nav-link" href="#">Mis Pedidos</a>
+                </div>
+                <div class="nav-item col-2">
+                    <a class="nav-link" href="#">Carrito</a>
+                </div>
+                <div class="d-flex nav-item col-2">
+
+                    <div class="dropdown mr-1">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+                            Menu
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                            <a class="dropdown-item" href="#">Configuracion</a>
+                            <a class="dropdown-item" href="#">Cerrar Sesion</a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
         </div>
         <div class="card-body">
             <div class="container py-4">
@@ -44,6 +58,10 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     -->
+
+    <div class="card-footer text-muted text-center">
+        &copy; 2020 Panaderia Pegaso Inc
+    </div>
 </body>
 
 </html>
