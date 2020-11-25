@@ -22,6 +22,18 @@ Route::get('/customer', function () {
     return view('customer/index');
 });
 
+Route::get('/customer/configuration', function () {
+    return view('customer/configuration');
+});
+
+Route::get('/customer/orders', function () {
+    return view('customer/orders');
+});
+
+Route::get('/customer/shopcart', function () {
+    return view('customer/shopCart');
+});
+
 Route::get('/login', function () {
     return view('login/viewlogin');
 });
