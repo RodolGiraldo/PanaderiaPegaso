@@ -10,7 +10,7 @@
             </div>
         @endif
     </div>
-    <div class="card mb" style="">
+    <div class="card mb">
         <div class="row no-gutters">
             <div class="col-md-5">
                 <img src="{{ url('image/Logo.jpeg') }}" class="card-img" alt="..." height="300px" width="300px">

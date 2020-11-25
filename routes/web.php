@@ -29,3 +29,11 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('login/viewregister');
 });
+
+Route::get('/admin', function () {
+    return view('admin/index');
+});
+
+Route::get('/admincustomers', function () {
+    return view('admin/customers');
+});
