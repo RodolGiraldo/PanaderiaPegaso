@@ -47,5 +47,35 @@ Route::get('/admin', function () {
 });
 
 Route::get('/admincustomers', function () {
-    return view('admin/customers');
+    return view('admin/customersadmin/indexcustomers');
+});
+
+Route::get('/adminusers', function () {
+    return view('admin/useradmin/indexuser');
+});
+Route::get('/adminproducts', function () {
+    return view('admin/productsadmin/indexproducts');
+});
+Route::get('/adminsales', function () {
+    return view('admin/salesadmin/indexsales');
+});
+
+Route::get('/adminedituser', function () {
+    return view('admin/useradmin/edituser');
+});
+
+Route::get('/admineditproduct', function () {
+    return view('admin/productsadmin/editproduct');
+});
+
+Route::get('/admineditsale', function () {
+    return view('admin/salesadmin/editsale');
+});
+
+Route::get('/admincreateuser', function () {
+    return view('admin/useradmin/createuser');
+});
+
+Route::get('/admincreateproduct', function () {
+    return view('admin/productsadmin/createproduct');
 });
