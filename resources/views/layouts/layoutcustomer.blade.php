@@ -15,13 +15,14 @@
         <div class="card-header">
             <div class="nav nav-tabs card-header-tabs row">
                 <div class="nav-item col-6">
-                    <span class="nav-link col-2 active disabled">Pegaso</span>
+                    <a class="nav-link col-2 active" href="/customer">Pegaso</a>
                 </div>
+                
                 <div class="col-2">
-                    <a class="nav-link" href="#">Mis Pedidos</a>
+                    <a class="nav-link" href="/customer/orders">Mis Pedidos</a>
                 </div>
                 <div class="nav-item col-2">
-                    <a class="nav-link" href="#">Carrito</a>
+                    <a class="nav-link" href="/customer/shopcart">Carrito</a>
                 </div>
                 <div class="d-flex nav-item col-2">
 
