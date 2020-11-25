@@ -1,4 +1,4 @@
 @extends('layouts.layoutcustomer')
 @section('content')
-    <p>Te amo Samantha Guillen Santa 😘</p>
+    <p>Esta es la pagina de pedidos</p>
 @endsection

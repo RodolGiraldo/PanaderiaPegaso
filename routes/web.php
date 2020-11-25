@@ -23,15 +23,15 @@ Route::get('/customer', function () {
 });
 
 Route::get('/customer/configuration', function () {
-    return view('customer/configuracion');
+    return view('customer/configuration');
 });
 
 Route::get('/customer/orders', function () {
-    return view('customer/pedidos');
+    return view('customer/orders');
 });
 
-Route::get('/customer/carshop', function () {
-    return view('customer/carrito');
+Route::get('/customer/shopcart', function () {
+    return view('customer/shopCart');
 });
 
 Route::get('/login', function () {
