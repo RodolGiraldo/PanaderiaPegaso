@@ -13,7 +13,9 @@
             <p class="card-text">$0.0</p>
         </div>
         <div class="card-footer">
-            <button class="btn-primary">Agregar</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                Agregar
+            </button>
         </div>
     </div>
     <div class="card">
@@ -23,7 +25,9 @@
             <p class="card-text">$0.0</p>
         </div>
         <div class="card-footer">
-            <button class="btn-primary">Agregar</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                Agregar
+            </button>
         </div>
     </div>
     <div class="card">
@@ -33,7 +37,9 @@
             <p class="card-text">$0.0</p>
         </div>
         <div class="card-footer">
-            <button class="btn-primary">Agregar</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                Agregar
+            </button>
         </div>
     </div>
     <div class="card">
@@ -43,7 +49,9 @@
             <p class="card-text">$0.0</p>
         </div>
         <div class="card-footer">
-            <button class="btn-primary">Agregar</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                Agregar
+            </button>
         </div>
     </div>
 </div>
@@ -56,7 +64,9 @@
             <p class="card-text">$0.0</p>
         </div>
         <div class="card-footer">
-            <button class="btn-primary">Agregar</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                Agregar
+            </button>
         </div>
     </div>
     <div class="card">
@@ -66,7 +76,9 @@
             <p class="card-text">$0.0</p>
         </div>
         <div class="card-footer">
-            <button class="btn-primary">Agregar</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                Agregar
+            </button>
         </div>
     </div>
     <div class="card">
@@ -76,7 +88,9 @@
             <p class="card-text">$0.0</p>
         </div>
         <div class="card-footer">
-            <button class="btn-primary">Agregar</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                Agregar
+            </button>
         </div>
     </div>
     <div class="card">
@@ -86,7 +100,32 @@
             <p class="card-text">$0.0</p>
         </div>
         <div class="card-footer">
-            <button class="btn-primary">Agregar</button>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                Agregar
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
     </div>
 </div>

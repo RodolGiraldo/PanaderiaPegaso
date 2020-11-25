@@ -20,7 +20,7 @@
                     <h1>Pegaso</h1>
                 </div>
                 <li class="nav-item col">
-                    <a class="nav-link text-white" href="#">Clientes</a>
+                    <a class="nav-link text-white" href="/admincustomers">Clientes</a>
                 </li>
                 <li class="nav-item col">
                     <a class="nav-link text-white" href="#">Usuarios</a>

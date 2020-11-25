@@ -12,26 +12,25 @@
 
 <body>
     <div class="card text-center">
-        <div class="card-header">
+        <div class="card-header" style="background-color: #273B47">
             <div class="nav nav-tabs card-header-tabs row">
-                <div class="nav-item col-6">
-                    <a class="nav-link col-2 active" href="/customer">Pegaso</a>
+                <div class="nav-item col-6 ">
+                    <a class="nav-link col-2 text-white" href="/customer">Pegaso</a>
                 </div>
 
                 <div class="col-2">
-                    <a class="nav-link" href="/customer/orders">Mis Pedidos</a>
+                    <a class="nav-link text-white" href="/customer/orders">Mis Pedidos</a>
                 </div>
                 <div class="nav-item col-2">
-                    <a class="nav-link" href="/customer/shopcart">Carrito</a>
+                    <a class="nav-link text-white" href="/customer/shopcart">Carrito</a>
                 </div>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
+                        Menu
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button class="dropdown-item" type="button">Action</button>
-                        <button class="dropdown-item" type="button">Another action</button>
-                        <button class="dropdown-item" type="button">Something else here</button>
+                        <a class="dropdown-item" href="/customer/configuration" type="button">Configuracion</a>
+                        <a class="dropdown-item" href="" type="button">Cerrar Sesion</a>
                     </div>
                 </div>
 
@@ -57,8 +56,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     -->
 
-    <div class="card-footer text-muted text-center">
-        &copy; 2020 Panaderia Pegaso Inc
+    <div class="card-footer text-muted text-center" style="background-color: #273B47">
+        <a class="text-white">&copy; 2020 Panaderia Pegaso Inc</a>
     </div>
 </body>
 
