@@ -13,25 +13,37 @@
 </head>
 
 <body>
-    <div class="card text-center font-color-white shadow-sm" style="background-color: #273B47">
-        <div class="card-header text-white">
-            <ul class="nav card-header-tabs">
-                <div class="" style="">
-                    <h1>Pegaso</h1>
+    <div class="card text-center font-color-white shadow-sm">
+        <div class="card-header" style="background-color: #273B47">
+            <div class="nav nav-tabs card-header-tabs row">
+                <div class="nav-item col-6 ">
+                    <a class="nav-link col-2 text-white" href="/customer">Pegaso</a>
                 </div>
-                <li class="nav-item col">
+
+                <div class="col-1.5">
                     <a class="nav-link text-white" href="/admincustomers">Clientes</a>
-                </li>
-                <li class="nav-item col">
-                    <a class="nav-link text-white" href="#">Usuarios</a>
-                </li>
-                <li class="nav-item col">
-                    <a class="nav-link text-white" href="#">Ventas</a>
-                </li>
-                <li class="nav-item col">
-                    <a class="nav-link text-white" href="#">Productos</a>
-                </li>
-            </ul>
+                </div>
+                <div class="col-1.5">
+                    <a class="nav-link text-white" href="/adminusers">Usuarios</a>
+                </div>
+                <div class="col-1.5">
+                    <a class="nav-link text-white" href="/adminsales">Ventas</a>
+                </div>
+                <div class="nav-item col-1.5">
+                    <a class="nav-link text-white" href="/adminproducts">Productos</a>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Administrador
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <a class="dropdown-item" href="/customer/configuration" type="button">Configuracion</a>
+                        <a class="dropdown-item" href="" type="button">Cerrar Sesion</a>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
     </div>
     <div class="container py-4">
