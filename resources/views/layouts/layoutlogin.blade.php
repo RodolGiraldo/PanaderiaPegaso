@@ -11,7 +11,7 @@
 
 </head>
 
-<body>
+<body style="background-color: #273B47">
     <div class="container py-4">
         @yield('content')
     </div>
