@@ -17,25 +17,22 @@
                 <div class="nav-item col-6">
                     <a class="nav-link col-2 active" href="/customer">Pegaso</a>
                 </div>
-                
+
                 <div class="col-2">
                     <a class="nav-link" href="/customer/orders">Mis Pedidos</a>
                 </div>
                 <div class="nav-item col-2">
                     <a class="nav-link" href="/customer/shopcart">Carrito</a>
                 </div>
-                <div class="d-flex nav-item col-2">
-
-                    <div class="dropdown mr-1">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
-                            Menu
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                            <a class="dropdown-item" href="#">Configuracion</a>
-                            <a class="dropdown-item" href="#">Cerrar Sesion</a>
-                        </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item" type="button">Action</button>
+                        <button class="dropdown-item" type="button">Another action</button>
+                        <button class="dropdown-item" type="button">Something else here</button>
                     </div>
-
                 </div>
 
 
