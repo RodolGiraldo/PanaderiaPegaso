@@ -9,9 +9,9 @@
     <div class="row">
         <div class="col text-left form-inline">
             <a href="/admin/index" class="btn bg-danger text-white">Regresar</a>
-            <form class="form-inline col ">
-                <input class="form-control col-6" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success col-2" type="submit">Search</button>
+            <form class="col form-inline">
+                <input class="form-control col-6" type="search" placeholder="Buscar por documento" aria-label="Search">
+                <button class="btn btn-outline-success col-2" type="submit">Buscar</button>
             </form>
         </div>
     </div>
