@@ -34,6 +34,12 @@ Route::get('/customer/shopcart', function () {
     return view('customer/shopCart');
 });
 
+Route::get('/vendor', function(){
+    return view('vendor/index');
+});
+
+
+
 Route::get('/login', function () {
     return view('login/viewlogin');
 });

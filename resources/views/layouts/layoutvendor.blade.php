@@ -14,16 +14,18 @@
     <div class="card text-center">
         <div class="card-header" style="background-color: #273B47">
             <div class="nav nav-tabs card-header-tabs row">
-                <div class="nav-item col-6 ">
-                    <a class="nav-link col-2 text-white" href="/customer">Pegaso</a>
+                <div class="nav-item col-sm-12 col-md-6">
+                    <a class="nav-link col-2 text-white" href="/vendor">Pegaso</a>
                 </div>
 
-                <div class="nav-item col-2">
+                <div class="col-sm-12 col-md-4">
                     <a class="nav-link text-white" href="/customer/orders">Mis Pedidos</a>
                 </div>
+                <!--
                 <div class="nav-item col-2">
                     <a class="nav-link text-white" href="/customer/shopcart">Carrito</a>
                 </div>
+                -->
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Menu
@@ -33,8 +35,6 @@
                         <a class="dropdown-item" href="" type="button">Cerrar Sesion</a>
                     </div>
                 </div>
-
-
             </div>
         </div>
         <div class="card-body">
