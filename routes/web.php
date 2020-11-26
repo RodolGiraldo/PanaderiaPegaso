@@ -79,3 +79,7 @@ Route::get('/admincreateuser', function () {
 Route::get('/admincreateproduct', function () {
     return view('admin/productsadmin/createproduct');
 });
+
+Route::get('/adminowner', function () {
+    return view('owner/salesowner');
+});
