@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableOrders extends Migration
+class CreateFormaPagosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateTableOrders extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->id();
+        Schema::create('forma_pagos', function (Blueprint $table) {
+            $table->id('codigoFormaPago');
+            $table->string('nombreFormaPago');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateTableOrders extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('forma_pagos');
     }
 }

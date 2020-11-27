@@ -38,7 +38,13 @@ Route::get('/vendor', function(){
     return view('vendor/index');
 });
 
+Route::get('/domiciliary',function(){
+    return view('domiciliary/index');
+});
 
+Route::get('/domiciliary/order',function(){
+    return view('domiciliary/detallepedido');
+});
 
 Route::get('/login', function () {
     return view('login/viewlogin');
