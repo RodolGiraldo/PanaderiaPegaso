@@ -15,7 +15,7 @@ class CreateEstadoPedidosTable extends Migration
     {
         Schema::create('estado_pedidos', function (Blueprint $table) {
             $table->id('idEstadoPedido');
-            $table->timestamps('horaCambioEstado');
+            $table->timestamp('horaCambioEstado');
             $table->unsignedBigInteger('codigoEstado');
             $table->unsignedBigInteger('idPedido');
             $table->foreign('codigoEstado')->references('codigoEstado')->on('estados');
