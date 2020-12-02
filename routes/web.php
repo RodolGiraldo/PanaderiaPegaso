@@ -41,20 +41,17 @@ Route::get('/domiciliary/order',function(){
     return view('domiciliary/detallepedido');
 });
 
+Route::get('/administrador', function () {
+    return view('admin.index');
+});
 
 Route::get('/','App\Http\Controllers\LoginController@index');
 
-<<<<<<< HEAD
-Route::get('/admin', function () {
-    return view('admin.index');
-});
-=======
 Route::get('/register','App\Http\Controllers\LoginController@viewregister');
 
 Route::post('/login','App\Http\Controllers\LoginController@login');
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index');
->>>>>>> fc6e69565af33207f78c6e89593d98d59517cb07
 
 Route::resource('/productos', 'App\Http\Controllers\ProductoController');
 
