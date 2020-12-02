@@ -16,21 +16,18 @@
     <div class="card text-center font-color-white shadow-sm">
         <div class="card-header" style="background-color: #273B47">
             <div class="nav nav-tabs card-header-tabs row">
-                <div class="nav-item col-6 ">
-                    <a class="nav-link col-2 text-white" href="/customer">Pegaso</a>
+                <div class="nav-item col-4 ">
+                    <a class="nav-link col-4 text-white" href="/customer">Pegaso</a>
                 </div>
 
-                <div class="col-1.5">
-                    <a class="nav-link text-white" href="/admincustomers">Clientes</a>
+                <div class="col-2">
+                    <a class="nav-link text-white" href="/clientes">Clientes</a>
                 </div>
-                <div class="col-1.5">
-                    <a class="nav-link text-white" href="/adminusers">Usuarios</a>
+                <div class="col-2">
+                    <a class="nav-link text-white" href="/usuarios">Usuarios</a>
                 </div>
-                <div class="col-1.5">
-                    <a class="nav-link text-white" href="/adminsales">Ventas</a>
-                </div>
-                <div class="nav-item col-1.5">
-                    <a class="nav-link text-white" href="/adminproducts">Productos</a>
+                <div class="nav-item col-2">
+                    <a class="nav-link text-white" href="/productos">Productos</a>
                 </div>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -19,33 +19,30 @@
                     </div>
                 @endif
             </div>
-            <form action="#">
+            <form action="/productos" method="POST">
                 @csrf
                 <div class="form-row">
+                    
                     <div class="form-group font-weight-bold">
-                        <label for="id_product">IdProducto:</label>
-                        <input type="text" class="form-control" id="id_product" name="id_product" value="">
-                    </div>
-                    <div class="form-group font-weight-bold">
-                        <label for="nameproduct">Nombre:</label>
-                        <input type="text" class="form-control" id="nameproduct" name="nameproduct" value="">
+                        <label for="nombreProducto">Nombre:</label>
+                        <input type="text" class="form-control" id="nombreProducto" name="nombreProducto" value="{{ old('nombreProducto')}}">
                     </div>
                 </div>
                 <div class="form-row form-group font-weight-bold">
-                    <label for="descriptionproduct">Description:</label>
-                    <textarea name="text" id="descriptionproduct" cols="30" rows="10"></textarea>
+                    <label for="descripcionProducto">Description:</label>
+                    <textarea name="text" id="descripcionProducto" cols="30" rows="10"></textarea>
                 </div>
                 <div class="form-row">
                     <div class="form-group font-weight-bold">
-                        <label for="priceproduct">Precio unitario</label>
-                        <input type="number" name="priceproduct" id="priceproduct">
+                        <label for="precioProducto">Precio unitario</label>
+                        <input type="number" name="precioProducto" id="precioProducto" value="{{ old('precioProducto')}}">
                     </div>
                     <div class="form-group font-weight-bold">
-                        <label for="quatityproduct">Cantidad</label>
-                        <input type="number" name="quatityproduct" id="quatityproduct">
+                        <label for="direccionImagenProducto">Nombre imagen</label>
+                        <input type="text" name="direccionImagenProducto" id="direccionImagenProducto" value="{{ old('direccionImagenProducto')}}">
                     </div>
                 </div>
-                <a href="#" class="btn btn-danger">Cancelar</a>
+                <a href="/productos" class="btn btn-danger">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
         </div>

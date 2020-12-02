@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use DB;
 
 class ClienteController extends Controller
 {
@@ -14,7 +15,10 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin/customersadmin.indexcustomers', [
+            'clientes' => DB::select('select * from ListarClientes()'),
+            'documentos'=> DB::select('select * from ListarDocumentos()')
+        ]);
     }
 
     /**

@@ -3,53 +3,58 @@
 
     <div class="row text-center alert bg-secondary text-white">
         <div class="col">
-            <h1>Editar</h1>
+            @foreach ($productos as $producto)
+                <h1>Editar producto {{ $producto->nombreProducto }}</h1>
+            @endforeach
         </div>
     </div>
 
     <body class="col">
         <div class="row alert alert-success">
+            @foreach ($productos as $producto)
+                <form action="/productos/{{ $producto->codigoProducto }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="col">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                    - {{ $error }}<br>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
 
-            <form action="#" method="POST">
-                <div class="col">
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            @foreach ($errors->all() as $error)
-                                - {{ $error }}<br>
-                            @endforeach
+
+                    <div class="form-row">
+                        <div class="form-group font-weight-bold">
+                            <label for="codigoProducto">Codigo Producto:</label>
+                            <input type="text" class="form-control" id="codigoProducto" name="codigoProducto"
+                                value="{{ old('codigoProducto', $producto->codigoProducto) }}">
                         </div>
-                    @endif
-                </div>
-                @csrf
-                @method('PUT')
-                <div class="form-row">
-                    <div class="form-group font-weight-bold">
-                        <label for="id_product">IdProducto:</label>
-                        <input type="text" class="form-control" id="id_product" name="id_product" value="">
+                        <div class="form-group font-weight-bold">
+                            <label for="nombreProducto">Nombre:</label>
+                            <input type="text" class="form-control" id="nombreProducto" name="nombreProducto"
+                                value="{{ old('nombreProducto', $producto->nombreProducto) }}">
+                        </div>
                     </div>
-                    <div class="form-group font-weight-bold">
-                        <label for="nameproduct">Nombre:</label>
-                        <input type="text" class="form-control" id="nameproduct" name="nameproduct" value="">
+                    <div class="form-row form-group font-weight-bold">
+                        <label for="descripcionProducto">Description:</label>
+                        <textarea name="descripcionProducto" id="descripcionProducto" cols="30" rows="10"
+                            value="{{ old('descripcionProducto', $producto->descripcionProducto) }}"></textarea>
                     </div>
-                </div>
-                <div class="form-row form-group font-weight-bold">
-                    <label for="descriptionproduct">Description:</label>
-                    <textarea name="text" id="descriptionproduct" cols="30" rows="10"></textarea>
-                </div>
-                <div class="form-row">
-                    <div class="form-group font-weight-bold">
-                        <label for="priceproduct">Precio unitario</label>
-                        <input type="number" name="priceproduct" id="priceproduct">
+                    <div class="form-row">
+                        <div class="form-group font-weight-bold">
+                            <label for="precioProducto">Precio Producto: $</label>
+                            <input type="number" name="precioProducto" id="precioProducto"
+                                value="{{ old('precioProducto', $producto->precioProducto) }}">
+                        </div>
                     </div>
-                    <div class="form-group font-weight-bold">
-                        <label for="quatityproduct">Cantidad</label>
-                        <input type="number" name="quatityproduct" id="quatityproduct">
-                    </div>
-                </div>
-                <a href="#" class="btn btn-danger">Cancelar</a>
-                <button type="submit" class="btn btn-primary">Guardar</button>
-            </form>
+                    <a href="/productos" class="btn btn-danger">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
 
+            @endforeach
         </div>
         <br>
     @endsection

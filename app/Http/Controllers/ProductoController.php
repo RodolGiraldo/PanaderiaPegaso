@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use DB;
 
 class ProductoController extends Controller
 {
@@ -14,7 +15,10 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin/productsadmin.indexproducts', [
+            'productos' =>DB::select('select * from ListarProductos()')
+        ]);
+        return $this->BuscarProductoPorNombre();
     }
 
     /**
@@ -24,7 +28,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/productsadmin.createproduct');
     }
 
     /**
@@ -35,7 +39,16 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $producto = new Producto();
+
+        $producto->nombreProducto = $request->get('nombreProducto');
+        $producto->descripcionProducto = $request->get('descripcionProducto');
+        $producto->precioProducto = $request->get('precioProducto');
+        $producto->direccionImagenProducto = $request->get('direccionImagenProducto');
+
+        DB::select("select CrearProducto('$producto->nombreProducto', '$producto->descripcionProducto', $producto->precioProducto, ' $producto->direccionImagenProducto' )");
+
+        return redirect('/productos');
     }
 
     /**
@@ -55,9 +68,11 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit($codigoProducto)
     {
-        //
+        return view('admin/productsadmin.editproduct', [
+            'productos' => DB::select("select * from EditarProducto('$codigoProducto')")
+        ]);
     }
 
     /**
@@ -67,9 +82,19 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Producto $producto)
+    public function update(Request $request, $codigoProducto)
     {
-        //
+        $producto = new Producto();
+        $producto->codigoProducto = $codigoProducto;
+        $producto->nombreProducto = $request->get('nombreProducto');
+        $producto->descripcionProducto = $request->get('descripcionProducto');
+        $producto->precioProducto = $request->get('precioProducto');
+        $producto->direccionImagenProducto = $request->get('direccionImagenProducto');
+
+        DB::select("select ActualizarProducto($producto->codigoProducto,'$producto->nombreProducto', '$producto->descripcionProducto', $producto->precioProducto, '$producto->direccionImagenProducto')");
+        return redirect('/productos');
+        
+
     }
 
     /**
@@ -78,8 +103,16 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producto $producto)
+    public function destroy($codigoProducto)
     {
-        //
+        DB::select("select EliminarProducto($codigoProducto)");
+        return back();
+    }
+    public function BuscarProductoPorNombre(Request $nombreProducto)
+    {
+        $nombre = $nombreProducto->get("nombreProducto");
+        return view('admin/productsadmin.indexproducts', [
+            'productos' => DB::select("select * from BuscarNombreProducto('$nombreProducto')")
+        ]);
     }
 }

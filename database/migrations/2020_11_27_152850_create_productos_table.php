@@ -17,6 +17,7 @@ class CreateProductosTable extends Migration
             $table->id('codigoProducto');
             $table->string('nombreProducto');
             $table->string('descripcionProducto');
+            $table->integer('precioProducto');
             $table->string('direccionImagenProducto');
             $table->timestamps();
         });

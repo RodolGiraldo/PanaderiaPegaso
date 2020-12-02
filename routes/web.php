@@ -55,43 +55,13 @@ Route::get('/register', function () {
 });
 
 Route::get('/admin', function () {
-    return view('admin/index');
+    return view('admin.index');
 });
 
-Route::get('/admincustomers', function () {
-    return view('admin/customersadmin/indexcustomers');
-});
+Route::resource('/productos', 'App\Http\Controllers\ProductoController');
 
-Route::get('/adminusers', function () {
-    return view('admin/useradmin/indexuser');
-});
-Route::get('/adminproducts', function () {
-    return view('admin/productsadmin/indexproducts');
-});
-Route::get('/adminsales', function () {
-    return view('admin/salesadmin/indexsales');
-});
+Route::resource('/clientes', 'App\Http\Controllers\ClienteController');
 
-Route::get('/adminedituser', function () {
-    return view('admin/useradmin/edituser');
-});
+Route::get('/search', 'App\Http\Controllers\ProductoController@BuscarProductoPorNombre');
 
-Route::get('/admineditproduct', function () {
-    return view('admin/productsadmin/editproduct');
-});
-
-Route::get('/admineditsale', function () {
-    return view('admin/salesadmin/editsale');
-});
-
-Route::get('/admincreateuser', function () {
-    return view('admin/useradmin/createuser');
-});
-
-Route::get('/admincreateproduct', function () {
-    return view('admin/productsadmin/createproduct');
-});
-
-Route::get('/adminowner', function () {
-    return view('owner/salesowner');
-});
+Route::resource('/usuarios', 'App\Http\Controllers\UsuarioController');
