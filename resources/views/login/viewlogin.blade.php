@@ -18,15 +18,16 @@
             <div class="col-md-1"></div>
             <div class="col-md-6">
                 <div class="card-body">
-                    <form>
+                    <form action="/login" method="POST">
+                    @csrf
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Correo Electronico</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            <label for="InputEmail1">Correo Electronico</label>
+                            <input type="email" class="form-control" name="InputEmail" id="InputEmail" aria-describedby="emailHelp"
                                 placeholder="name@example.com">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Contraseña</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="InputPassword1">Contraseña</label>
+                            <input type="password" class="form-control" name="InputPassword" id="InputPassword">
                         </div>
                         <div class="">
                             <nav class="nav nav-pills nav-justified">
@@ -34,7 +35,7 @@
                                     <a class="nav-link" href="#">¿Olvidaste tu Contraseña?</a>
                                 </div>
                                 <div class="">
-                                    <a class="nav-link" href="#">Registrate</a>
+                                    <a class="nav-link" href="/register">Registrate</a>
                                 </div>
                             </nav>
                         </div>
