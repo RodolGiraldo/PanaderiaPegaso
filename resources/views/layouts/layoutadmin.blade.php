@@ -17,7 +17,7 @@
         <div class="card-header" style="background-color: #273B47">
             <div class="nav nav-tabs card-header-tabs row">
                 <div class="nav-item col-4 ">
-                    <a class="nav-link col-4 text-white" href="/customer">Pegaso</a>
+                    <a class="nav-link col-4 text-white" href="/administrador">Pegaso</a>
                 </div>
 
                 <div class="col-2">
