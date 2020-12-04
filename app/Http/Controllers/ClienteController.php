@@ -13,6 +13,17 @@ class ClienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    // public function orders($cliente){
+    //     return view('customer.orders',[
+    //         'clientes' => $cliente
+    //     ]);
+    // }
+
+    public function orders(){
+        return view('customer.orders');
+    }
+
     public function index()
     {
         return view('admin/customersadmin.indexcustomers', [

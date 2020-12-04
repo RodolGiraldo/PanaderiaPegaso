@@ -6,4 +6,5 @@
             <h1>espacio para la descripción</h1>
         </div>
     </div>
+    {{dd($usuarios)}}
 @endsection

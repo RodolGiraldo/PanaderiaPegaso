@@ -21,9 +21,7 @@ Route::get('/customer/configuration', function () {
     return view('customer/configuration');
 });
 
-Route::get('/customer/orders', function () {
-    return view('customer/orders');
-});
+Route::get('/customer/orders', 'App\Http\Controllers\ClienteController@orders');
 
 Route::get('/customer/shopcart', function () {
     return view('customer/shopCart');
@@ -39,10 +37,6 @@ Route::get('/domiciliary',function(){
 
 Route::get('/domiciliary/order',function(){
     return view('domiciliary/detallepedido');
-});
-
-Route::get('/administrador', function () {
-    return view('admin.index');
 });
 
 Route::get('/','App\Http\Controllers\LoginController@index');

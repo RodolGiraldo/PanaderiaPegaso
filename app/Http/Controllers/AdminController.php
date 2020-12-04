@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function index($user)
+    public function index($correo)
     {
-        dd($user);
+        return view('admin.index',$correo);
     }
 }
