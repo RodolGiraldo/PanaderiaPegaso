@@ -1,9 +1,9 @@
 @extends('layouts.layoutadmin')
 
 @section('content')
-    <div class="row alert alert-success text-white">
+    <div class="row">
         <div class="col">
-            <h1>espacio para la descripción</h1>
+            <h3>El administrador tiene la posibilidad de relizar distintos cambios en la base de datos de nuestra empresa, es importante manejar las medidas de precaución necesarias para evistar daños inremediables</h3>
         </div>
     </div>
 @endsection
