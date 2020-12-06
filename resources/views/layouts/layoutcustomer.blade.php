@@ -63,6 +63,7 @@
     <div class="card-footer text-muted text-center" style="background-color: #273B47">
         <a class="text-white">&copy; 2020 Panaderia Pegaso Inc</a>
     </div>
+    <script src="js/customer.js"></script>
 </body>
 
 </html>

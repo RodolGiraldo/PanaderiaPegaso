@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use DB;
@@ -14,7 +15,7 @@ class LoginController extends Controller
 
     public function login(Request $request){
         $usuario = new Usuario();
-
+        
         $usuario->emailUsuario = $request->get("InputEmail");
         $usuario->passwordUsuario = $request->get("InputPassword");
         

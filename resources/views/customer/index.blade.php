@@ -6,135 +6,60 @@
     <button class="btn btn-outline-success col-2" type="submit">Search</button>
 </form>
 <br>
-<div class="card-deck">
-    <div class="card">
-        <img src="{{url('image/Logo.jpeg')}}" class="card-img" alt="..." height="150px" width="150px">
-        <div class="card-body">
-            <h5 class="card-title">Nombre Producto</h5>
-            <p class="card-text">$0.0</p>
-        </div>
-        <div class="card-footer">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                Agregar
-            </button>
-        </div>
-    </div>
-    <div class="card">
-        <img src="{{url('image/Logo.jpeg')}}" class="card-img" alt="..." height="150px" width="150px">
-        <div class="card-body">
-            <h5 class="card-title">Nombre Producto</h5>
-            <p class="card-text">$0.0</p>
-        </div>
-        <div class="card-footer">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                Agregar
-            </button>
-        </div>
-    </div>
-    <div class="card">
-        <img src="{{url('image/Logo.jpeg')}}" class="card-img" alt="..." height="150px" width="150px">
-        <div class="card-body">
-            <h5 class="card-title">Nombre Producto</h5>
-            <p class="card-text">$0.0</p>
-        </div>
-        <div class="card-footer">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                Agregar
-            </button>
-        </div>
-    </div>
-    <div class="card">
-        <img src="{{url('image/Logo.jpeg')}}" class="card-img" alt="..." height="150px" width="150px">
-        <div class="card-body">
-            <h5 class="card-title">Nombre Producto</h5>
-            <p class="card-text">$0.0</p>
-        </div>
-        <div class="card-footer">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                Agregar
-            </button>
-        </div>
-    </div>
-</div>
-<br>
-<div class="card-deck">
-    <div class="card">
-        <img src="{{url('image/Logo.jpeg')}}" class="card-img" alt="..." height="150px" width="150px">
-        <div class="card-body">
-            <h5 class="card-title">Nombre Producto</h5>
-            <p class="card-text">$0.0</p>
-        </div>
-        <div class="card-footer">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                Agregar
-            </button>
-        </div>
-    </div>
-    <div class="card">
-        <img src="{{url('image/Logo.jpeg')}}" class="card-img" alt="..." height="150px" width="150px">
-        <div class="card-body">
-            <h5 class="card-title">Nombre Producto</h5>
-            <p class="card-text">$0.0</p>
-        </div>
-        <div class="card-footer">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                Agregar
-            </button>
-        </div>
-    </div>
-    <div class="card">
-        <img src="{{url('image/Logo.jpeg')}}" class="card-img" alt="..." height="150px" width="150px">
-        <div class="card-body">
-            <h5 class="card-title">Nombre Producto</h5>
-            <p class="card-text">$0.0</p>
-        </div>
-        <div class="card-footer">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                Agregar
-            </button>
-        </div>
-    </div>
-    <div class="card">
-        <img src="{{url('image/Logo.jpeg')}}" class="card-img" alt="..." height="150px" width="150px">
-        <div class="card-body">
-            <h5 class="card-title">Nombre Producto</h5>
-            <p class="card-text">$0.0</p>
-        </div>
-        <div class="card-footer">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                Agregar
-            </button>
-        </div>
-    </div>
-</div>
 
+<div class="card-deck">
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Nombre Producto</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+    @foreach($productos as $producto)
+    <div class="col-sm-2 col-md-4 col-lg-3 col-12">
+        <div class="card" id="card">
+            <img src="{{url('image/'.$producto->direccionImagenProducto)}}" class="card-img" alt="..." height="150px" width="150px">
+            <div class="card-body">
+                <h4 class="card-title">{{$producto->nombreProducto}}</h4>
+                <p class="card-text">${{$producto->precioProducto}}</p>
+            </div>
+            <div class="card-footer">
+                <button type="button" onclick="cambiarPrecio('{{$producto->codigoProducto}}')" class="btn btn-primary btnAgregar" id="btnAgregar{{$producto->codigoProducto}}" data-toggle="modal" data-target="#exampleModalLong{{$producto->codigoProducto}}">
+                    Agregar
                 </button>
             </div>
-            <div class="modal-body">
-                <img src="{{url('image/Logo.jpeg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Nombre Producto</h5>
-                    <p class="card-text">Aqui va la descripcion del producto.</p>
-                    <p class="card-text">Precio: $0.0 <input type="number" name="cantidad" id="cantidad"></p>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong{{$producto->codigoProducto}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{$producto->nombreProducto}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
+                <div class="modal-body">
+                    <img src="{{url('image/'.$producto->direccionImagenProducto)}}" class="card-img-top" alt="---Tenemos problemas para cargar la imagen---">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$producto->nombreProducto}}</h5>
+                        <p class="card-text">{{$producto->descripcionProducto}}</p>
+                        <p class="card-text">Precio Unidad: $<input type="texto" class="precio" name="precio" id="precio{{$producto->codigoProducto}}" value="{{$producto->precioProducto}}" disabled></p>
+                        <p class="card-text">Cantidad: <input type="number" min="1" step="1" class="cantidad" name="cantidad" id="cantidad{{$producto->codigoProducto}}" value="1"></p>
+                        <p class="card-text">Precio Total: $<input type="texto" class="precioTotal" name="precioTotal" id="precioTotal{{$producto->codigoProducto}}" value="{{$producto->precioProducto}}" disabled></p>
+                    </div>
+                </div>
+
+                <input id="nombreProducto{{$producto->codigoProducto}}" name="nombreProducto{{$producto->codigoProducto}}" type="hidden" value="{{$producto->nombreProducto}}">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" onclick="agregarCarrito('{{$producto->codigoProducto}}')">Agregar al Carrito</button>
+                </div>
+
             </div>
         </div>
-
     </div>
+
+    @endforeach
+
 </div>
-</div>
+
+
+
+
 @endsection

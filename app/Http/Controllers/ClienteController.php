@@ -32,6 +32,11 @@ class ClienteController extends Controller
         ]);
     }
 
+    public function viewIndexCustomer(){
+        return view('customer.index',[
+            'productos' => DB::select('select * from listarproductos()')
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *

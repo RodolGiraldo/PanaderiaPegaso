@@ -32,8 +32,8 @@
                     @foreach ($clientes as $cliente)
                         <tr>
                             <td>{{ $cliente->cedulaCliente }}</td>
-                            <td>{{ $cliente->nombreUsuario }}</td>
-                            <td>{{ $cliente->apellidoUsuario }}</td>
+                            <td>{{ $cliente->nombreCliente }}</td>
+                            <td>{{ $cliente->apellidoCliente }}</td>
                             <td>{{ $cliente->emailCliente }}</td>
                             <td>{{ $cliente->telefonoCliente }}</td>
                             <td>{{ $cliente->generoCliente }}</td>
