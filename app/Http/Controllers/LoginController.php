@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use DB;
@@ -14,7 +15,7 @@ class LoginController extends Controller
 
     public function login(Request $request){
         $usuario = new Usuario();
-
+        
         $usuario->emailUsuario = $request->get("InputEmail");
         $usuario->passwordUsuario = $request->get("InputPassword");
         
@@ -23,9 +24,15 @@ class LoginController extends Controller
         foreach ($conexion as $key => $value) {
             
                 if ($value->idTipoUsuario == '1') {
-                    dd('sos cliente');
+                    $cliente = DB::select("select * from BuscarClienteEmail('$value->emailUsuario')");
+                    
+                    return view('customer.index',[
+                        'clientes' => $cliente
+                    ]);
                 }else if($value->idTipoUsuario == '2'){
-                    dd('Sos un admin');
+                    return view('admin.index',[
+                        'usuarios' => $conexion
+                    ]);
                 }else if($value->idTipoUsuario == '3'){
                     dd('Sos un dueño');
                 }else if($value->idTipoUsuario == '4'){

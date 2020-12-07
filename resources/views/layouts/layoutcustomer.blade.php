@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  
     <div class="card text-center">
         <div class="card-header" style="background-color: #273B47">
             <div class="nav nav-tabs card-header-tabs row">
@@ -25,9 +26,11 @@
                     <a class="nav-link text-white" href="/customer/shopcart">Carrito</a>
                 </div>
                 <div class="dropdown">
+
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Menu
+                        nombre
                     </button>
+
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                         <a class="dropdown-item" href="/customer/configuration" type="button">Configuracion</a>
                         <a class="dropdown-item" href="" type="button">Cerrar Sesion</a>
@@ -37,6 +40,7 @@
 
             </div>
         </div>
+   
         <div class="card-body">
             <div class="container py-4">
                 @yield('content')
@@ -59,6 +63,7 @@
     <div class="card-footer text-muted text-center" style="background-color: #273B47">
         <a class="text-white">&copy; 2020 Panaderia Pegaso Inc</a>
     </div>
+    <script src="js/customer.js"></script>
 </body>
 
 </html>

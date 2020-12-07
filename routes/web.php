@@ -13,20 +13,10 @@ use App\Http\Controllers;
 |
 */
 
-Route::get('/customer', function () {
-    return view('customer/index');
-});
 
-Route::get('/customer/configuration', function () {
-    return view('customer/configuration');
-});
 
-Route::get('/customer/orders', function () {
-    return view('customer/orders');
-});
-
-Route::get('/customer/shopcart', function () {
-    return view('customer/shopCart');
+Route::get('/owner', function () {
+    return view('owner/salesowner');
 });
 
 Route::get('/vendor', function(){
@@ -41,15 +31,34 @@ Route::get('/domiciliary/order',function(){
     return view('domiciliary/detallepedido');
 });
 
-Route::get('/administrador', function () {
-    return view('admin.index');
+/* Rutas para redireccion de las vistas del admin */
+Route::get('/admin', 'App\Http\Controllers\AdminController@index');
+//Route::get('/admin/customers', 'App\Http\Controllers\AdminController@viewCustomer');
+// ----------------------------------------------------------- //
+
+
+/* Rutas para redireccion de las vistas del cliente */
+
+Route::get('/customer','App\Http\Controllers\ClienteController@viewIndexCustomer');
+
+Route::get('/customer/configuration', function () {
+    return view('customer/configuration');
 });
+
+Route::get('/customer/orders', 'App\Http\Controllers\ClienteController@orders');
+
+Route::get('/customer/shopcart', function () {
+    return view('customer/shopCart');
+});
+
+
+// ----------------------------------------------------------- //
 
 Route::get('/','App\Http\Controllers\LoginController@index');
 
 Route::post('/login','App\Http\Controllers\LoginController@login');
 
-Route::get('/admin', 'App\Http\Controllers\AdminController@index');
+
 
 Route::resource('/productos', 'App\Http\Controllers\ProductoController');
 

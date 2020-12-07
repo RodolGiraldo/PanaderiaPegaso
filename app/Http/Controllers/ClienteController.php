@@ -13,6 +13,17 @@ class ClienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    // public function orders($cliente){
+    //     return view('customer.orders',[
+    //         'clientes' => $cliente
+    //     ]);
+    // }
+
+    public function orders(){
+        return view('customer.orders');
+    }
+
     public function index()
     {
         return view('admin/customersadmin.indexcustomers', [
@@ -21,6 +32,11 @@ class ClienteController extends Controller
         ]);
     }
 
+    public function viewIndexCustomer(){
+        return view('customer.index',[
+            'productos' => DB::select('select * from listarproductos()')
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *

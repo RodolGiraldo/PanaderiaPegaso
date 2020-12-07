@@ -1,4 +1,4 @@
-@extends('layouts.layoutcustomer')
+@extends('layouts.layoutvendor')
 @section('content')
 <div class="card text-center">
     <div class="card-body">
