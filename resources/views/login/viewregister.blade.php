@@ -11,49 +11,57 @@
         @endif
     </div>
     <div class="card mb" style="background-color:none" style="padding: 30px">
-        <form class="col">
+        <form action="/clientes" method="POST" class="col">
+            @csrf
             <div class="col">
+                <br>
                 <div class="form-group">
                     <div class="form-group col-md-6">
-                        <label for="name">Nombres</label>
-                        <input type="text" class="form-control" id="name">
+                        <label for="nombreCliente">Nombres</label>
+                        <input type="text" class="form-control" id="nombreCliente" name="nombreCliente" value="{{ old('nombreCliente') }}">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="lastname">Apellidos</label>
-                        <input type="text" class="form-control" id="lastname">
+                        <label for="apellidoCliente">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidoCliente" name="apellidoCliente" value="{{ old('apellidoCliente') }}">
                     </div>
                 </div>
+                <div class="form-group col-md-6">
+                    <label for="telefonoCliente">Telefono</label>
+                    <input type="number" class="form-control" id="telefonoCliente" name="telefonoCliente" value="{{ old('telefonoCliente') }}">
+                </div>
                 <div class="form-group col-md-4">
-                    <label for="gender">Genero</label>
-                    <select id="gender" class="form-control">
-                        <option selected>seleccionar</option>
-                        <option>Masculino</option>
-                        <option>Femenino</option>
-                        <option>Otro</option>
+                    <label for="generoCliente">Genero</label>
+                    <select id="generoCliente" class="form-control" name="generoCliente">
+                        <option value="">seleccionar...</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otro">Otro</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <div class="form-group col-md-4">
-                        <label for="document">Tipo de documento</label>
-                        <select id="document" class="form-control">
-                            <option selected>seleccionar</option>
-                            <option>Cedula de ciudadania</option>
-                            <option>Cedula extranjera</option>
-                            <option>Tarjeta de identidad</option>
+                        <label for="idTipoIdentificacion">Tipo de documento</label>
+                        <select id="idTipoIdentificacion" name="idTipoIdentificacion" class="form-control">
+                            <option value="">seleccionar</option>
+                            <option value="1">Cedula de ciudadania</option>
+                            <option value="2">Cedula extranjera</option>
+                            <option value="3">Tarjeta de identidad</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="numberdocument">Numero de documento</label>
-                        <input type="number" class="form-control" id="numberdocument">
+                        <label for="cedulaCliente">Numero de documento</label>
+                        <input type="number" class="form-control" id="cedulaCliente" name="cedulaCliente" value="{{ old('cedulaCliente') }}">
                     </div>
                     <div class="form-group">
                         <div class="form-group col-md-6">
-                            <label for="inputEmail4">Correo electronico</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="name@example.com">
+                            <label for="emailCliente">Correo electronico</label>
+                            <input type="email" class="form-control" id="emailCliente" name="emailCliente" placeholder="name@example.com"
+                                value="{{ old('emailCliente') }}">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="password">Contraseña</label>
-                            <input type="password" class="form-control" id="inputPassword4">
+                            <label for="passwordCliente">Contraseña</label>
+                            <input type="password" class="form-control" id="passwordCliente" name="passwordCliente"
+                                value="{{ old('passwordCliente') }}">
                             <small id="passwordHelpInline" class="text-muted">
                                 Debe tener entre 8 y 20 caracteres.
                             </small>

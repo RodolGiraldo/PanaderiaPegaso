@@ -1,14 +1,14 @@
 @extends('layouts.layoutadmin')
 
 @section('content')
-    <div class="row text-center alert bg-secondary text-white">
+    <div class="row text-center alert alert-secondary  text-weight-bold"">
         <div class="col">
             <h1>Productos</h1>
         </div>
     </div>
     <div class="row">
         <div class="col text-left form-inline">
-            <a href="/admin/index" class="btn bg-danger text-white">Regresar</a>
+            <a href="/administrador" class="btn bg-danger text-white">Regresar</a>
             <form class="col form-inline">
                 <input class="form-control col-10" type="search" placeholder="Buscar por nombre" aria-label="Search">
                 <button class="btn btn-outline-success col-2" type="submit">Buscar</button>
@@ -17,14 +17,16 @@
         </div>
     </div>
     <br>
-    <div class="row alert alert-success text-white">
+    <div class="row ">
         <div class="col">
             <table class="table">
-                <thead>
+                <thead class="alert alert-secondary text-weight-bold">
                     <td class="font-weight-bold">Codigo</td>
                     <td class="font-weight-bold">Nombre</td>
                     <td class="font-weight-bold">Descripción</td>
                     <td class="font-weight-bold">Precio</td>
+                    <td class="font-weight-bold">Editar</td>
+                    <td class="font-weight-bold">Eliminar</td>
                 </thead>
                 <tbody>
                     @foreach ($productos as $producto)

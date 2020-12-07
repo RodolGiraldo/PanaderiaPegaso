@@ -1,14 +1,14 @@
 @extends('layouts.layoutadmin')
 
 @section('content')
-    <div class="row text-center alert bg-secondary text-white">
+    <div class="row text-center alert alert-secondary text-weight-bold">
         <div class="col">
             <h1>Clientes</h1>
         </div>
     </div>
     <div class="row">
         <div class="col text-left form-inline">
-            <a href="/admin/index" class="btn bg-danger text-white">Regresar</a>
+            <a href="/administrador" class="btn bg-danger text-white">Regresar</a>
             <form class="col form-inline">
                 <input class="form-control col-6" type="search" placeholder="Buscar por documento" aria-label="Search">
                 <button class="btn btn-outline-success col-2" type="submit">Buscar</button>
@@ -16,10 +16,10 @@
         </div>
     </div>
     <br>
-    <div class="row alert alert-success text-white">
+    <div class="row">
         <div class="col">
             <table class="table">
-                <thead>
+                <thead class="alert alert-secondary text-weight-bold">
                     <td class="font-weight-bold">Documento</td>
                     <td class="font-weight-bold">Nombre</td>
                     <td class="font-weight-bold">Apellido</td>
@@ -32,8 +32,8 @@
                     @foreach ($clientes as $cliente)
                         <tr>
                             <td>{{ $cliente->cedulaCliente }}</td>
-                            <td>{{ $cliente->nombreUsuario }}</td>
-                            <td>{{ $cliente->apellidoUsuario }}</td>
+                            <td>{{ $cliente->nombreCliente }}</td>
+                            <td>{{ $cliente->apellidoCliente }}</td>
                             <td>{{ $cliente->emailCliente }}</td>
                             <td>{{ $cliente->telefonoCliente }}</td>
                             <td>{{ $cliente->generoCliente }}</td>

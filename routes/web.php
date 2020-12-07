@@ -47,8 +47,6 @@ Route::get('/administrador', function () {
 
 Route::get('/','App\Http\Controllers\LoginController@index');
 
-Route::get('/register','App\Http\Controllers\LoginController@viewregister');
-
 Route::post('/login','App\Http\Controllers\LoginController@login');
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index');
@@ -60,3 +58,7 @@ Route::resource('/clientes', 'App\Http\Controllers\ClienteController');
 Route::get('/search', 'App\Http\Controllers\ProductoController@BuscarProductoPorNombre');
 
 Route::resource('/usuarios', 'App\Http\Controllers\UsuarioController');
+
+Route::resource('/forgot','App\Http\Controllers\ValidarController');
+
+Route::get('/forgot/reco','App\Http\Controllers\ValidarController@reco');
