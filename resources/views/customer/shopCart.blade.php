@@ -1,5 +1,6 @@
 @extends('layouts.layoutcustomer')
 @section('content')
+
 <div class="card text-center">
     <div class="card-body">
         <h5 class="card-title">Carrito de Compras</h5>
@@ -7,12 +8,12 @@
 </div>
 <br>
 <form action="">
-
-
+  
+   
     <table class="table">
         <thead class="thead-light">
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">id</th>
                 <th scope="col">Nombre Producto</th>
                 <th scope="col">Cantidad</th>
                 <th scope="col">Precio Total</th>
@@ -20,28 +21,19 @@
             </tr>
         </thead>
         <tbody>
+            @foreach (Cart::getContent() as $item)
             <tr>
-                <th scope="row">1</th>
-                <td>Pan de la Abuela</td>
-                <td>
-                    <input type="number" name="cantidad" id="cantidad">
-                </td>
-                <td>$12000</td>
+                <th scope="row">{{$item->id}}</th>
+                <td>{{$item->name}}</td>
+                <td><input type="number" min="1" step="1" class="cantidad" name="cantidad" id="cantidad{{$item->id}}" value="{{$item->quantity}}"></td>
+                <td>$<input type="number" class="precioTotal" name="precioTotal" id="precioTotal{{$item->id}}" value="{{$item->price * $item->quantity}}" disabled></td>
                 <td>Btn-Eliminar</td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Pan de la tia</td>
-                <td>
-                    <input type="number" name="cantidad" id="cantidad">
-                </td>
-                <td>$6000</td>
-                <td>Btn-Eliminar</td>
-            </tr>
+            @endforeach
         </tbody>
     </table>
     <br>
-    <button type="button" class="btn btn-primary">Añadir Producto</button>
+    <a type="button" class="btn btn-primary" href="/customer">Añadir Producto</a>
     <button type="submit" class="btn btn-primary">Comprar</button>
 </form>
 @endsection

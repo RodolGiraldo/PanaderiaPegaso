@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  
+    <script src="/js/customer.js"></script>
     <div class="card text-center">
         <div class="card-header" style="background-color: #273B47">
             <div class="nav nav-tabs card-header-tabs row">
@@ -40,7 +40,7 @@
 
             </div>
         </div>
-   
+
         <div class="card-body">
             <div class="container py-4">
                 @yield('content')
@@ -63,7 +63,6 @@
     <div class="card-footer text-muted text-center" style="background-color: #273B47">
         <a class="text-white">&copy; 2020 Panaderia Pegaso Inc</a>
     </div>
-    <script src="js/customer.js"></script>
 </body>
 
 </html>

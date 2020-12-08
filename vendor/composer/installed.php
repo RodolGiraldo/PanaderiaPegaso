@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'v8.4.2',
-    'version' => '8.4.2.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '6e2fbbd58d29555d5becc39cd950837d6a0131b0',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -35,6 +35,15 @@
       array (
         0 => '*',
       ),
+    ),
+    'darryldecode/cart' => 
+    array (
+      'pretty_version' => '4.2.0',
+      'version' => '4.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7dcaddea121bf7724834ff3448b0d052a458d207',
     ),
     'davedevelopment/hamcrest-php' => 
     array (
@@ -440,12 +449,12 @@
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'v8.4.2',
-      'version' => '8.4.2.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '6e2fbbd58d29555d5becc39cd950837d6a0131b0',
     ),
     'laravel/tinker' => 
     array (
@@ -751,8 +760,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache' => 

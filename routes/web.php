@@ -54,6 +54,16 @@ Route::get('/customer/shopcart', function () {
 
 // ----------------------------------------------------------- //
 
+//Rutas para el carrito
+
+Route::post('/cart-add','App\Http\Controllers\CarritoController@add');
+Route::get('/cart-checkout','App\Http\Controllers\CarritoController@cart');
+
+Route::post('/cart-clear','App\Http\Controllers\CarritoController@clear');
+Route::post('/cart-removeitem','App\Http\Controllers\CarritoController@removeitem');
+
+// -----------------------------------------------------------//
+
 Route::get('/','App\Http\Controllers\LoginController@index');
 
 Route::get('/register','App\Http\Controllers\LoginController@viewregister');
