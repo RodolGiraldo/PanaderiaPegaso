@@ -44,7 +44,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('login.viewregister');
     }
 
     /**
@@ -55,7 +55,24 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cliente = new Cliente();
+
+        $cliente->nombreCliente = $request->get('nombreCliente');
+        $cliente->apellidoCliente = $request->get('apellidoCliente');
+        $cliente->telefonoCliente = $request->get('telefonoCliente');
+        $cliente->generoCliente = $request->get('generoCliente');
+        $cliente->idTipoIdentificacion = $request->get('idTipoIdentificacion');
+        $cliente->cedulaCliente = $request->get('cedulaCliente');
+        $cliente->emailCliente = $request->get('emailCliente');
+        $cliente->passwordCliente = $request->get('passwordCliente');
+
+
+        DB::select("select CrearCliente('$cliente->nombreCliente', '$cliente->apellidoCliente', '$cliente->telefonoCliente', '$cliente->generoCliente', $cliente->idTipoIdentificacion, $cliente->cedulaCliente, '$cliente->emailCliente', '$cliente->passwordCliente')");
+        DB::select("select CrearUsuario('$cliente->emailCliente', '$cliente->passwordCliente',1)");
+
+        return redirect('/customer');
+        
+
     }
 
     /**

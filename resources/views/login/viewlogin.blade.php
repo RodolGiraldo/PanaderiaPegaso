@@ -32,10 +32,10 @@
                         <div class="">
                             <nav class="nav nav-pills nav-justified">
                                 <div class="">
-                                    <a class="nav-link" href="#">¿Olvidaste tu Contraseña?</a>
+                                    <a class="nav-link" href="/forgot">¿Olvidaste tu Contraseña?</a>
                                 </div>
                                 <div class="">
-                                    <a class="nav-link" href="/register">Registrate</a>
+                                    <a class="nav-link" href="/clientes/create">Registrate</a>
                                 </div>
                             </nav>
                         </div>
