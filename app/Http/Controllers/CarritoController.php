@@ -5,17 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Cart;
 use App\Models\Producto;
+use Darryldecode\Cart\Cart as CartCart;
 use DB;
 
 class CarritoController extends Controller
 {
     public function add(Request $request){
-        $producto = new Producto();
         $codigo = $request->get('codigoProducto');
-        $producto = DB::select("select * from BuscarProductoPorId($codigo)");
         $cantidad = $request->get('cantidad');
         $precioUnidad = $request->get('precioProducto');
-        $precioTotal = $precioUnidad * $cantidad;
         $nombre = $request->get('nombreProducto');
         
        
@@ -47,5 +45,22 @@ class CarritoController extends Controller
     public function clear(){
         Cart::clear();
         return back()->with('success',"The shopping cart has successfully beed added to the shopping cart!");
+    }
+
+    public function viewPay(){
+        return view('customer/pay');
+    }
+    public function pay(Request $request){
+        $direccion = $request->get('direccion');
+        $tipopago = $request->get('tipoPago');
+        $cedulaCliente = 1;//Esto es de momento toca poner que la traiga de la sesion
+        $idDomiciliario = 1;//Esto igual
+
+        foreach (Cart::getContent() as $item){
+           DB::select("select * from AddPedido('$direccion',$tipopago,$cedulaCliente,$idDomiciliario)");
+           DB::select("select * from AddPedidoProducto($item->quantity,$item->id)");
+        }
+        $this->clear();
+        return redirect('/customer');
     }
 }

@@ -21,7 +21,20 @@ class ClienteController extends Controller
     // }
 
     public function orders(){
-        return view('customer.orders');
+        $idCliente = 1;
+        return view('customer.orders',[
+            'datos' => DB::select(" select pe.\"idPedido\",pepo.\"cantidad\",pepo.\"precioTotal\",pro.\"nombreProducto\",es.\"nombreEstado\"
+            FROM pedidos pe 
+                INNER JOIN pedido_productos pepo
+                    ON pe.\"idPedido\" = pepo.\"idPedido\"
+             INNER JOIN productos pro
+                 ON pro.\"codigoProducto\" = pepo.\"codigoProducto\"
+             INNER JOIN estado_pedidos espe
+                 ON espe.\"idPedido\" = pe.\"idPedido\" 
+             INNER JOIN estados es
+                 ON es.\"codigoEstado\" = espe.\"codigoEstado\"
+             where pe.\"idCliente\" = $idCliente ")
+        ]);
     }
 
     public function index()

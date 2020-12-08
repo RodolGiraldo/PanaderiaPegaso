@@ -47,6 +47,7 @@ Route::get('/customer/configuration', function () {
 
 Route::get('/customer/orders', 'App\Http\Controllers\ClienteController@orders');
 
+
 Route::get('/customer/shopcart', function () {
     return view('customer/shopCart');
 });
@@ -62,6 +63,8 @@ Route::get('/cart-checkout','App\Http\Controllers\CarritoController@cart');
 Route::post('/cart-clear','App\Http\Controllers\CarritoController@clear');
 Route::post('/cart-removeitem','App\Http\Controllers\CarritoController@removeitem');
 
+Route::get('/customer/orders/pay', 'App\Http\Controllers\CarritoController@viewPay');
+Route::post('/customer/orders/pay', 'App\Http\Controllers\CarritoController@pay');
 // -----------------------------------------------------------//
 
 Route::get('/','App\Http\Controllers\LoginController@index');
