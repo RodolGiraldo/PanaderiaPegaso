@@ -3,7 +3,9 @@
     <div id="accordion">
         <div class="card">
 
-
+            <div class="col-12">
+                <h3>Formulario para direccion</h3>
+            </div>
 
 
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"

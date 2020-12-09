@@ -95,7 +95,7 @@ Route::get('/customer/orders/pay', 'App\Http\Controllers\CarritoController@viewP
 Route::post('/customer/orders/pay', 'App\Http\Controllers\CarritoController@pay');
 // -----------------------------------------------------------//
 
-Route::get('/','App\Http\Controllers\LoginController@index');
+Route::get('/','App\Http\Controllers\Auth\LoginController@showLoginForm');
 
 Route::post('/login','App\Http\Controllers\LoginController@login');
 
@@ -116,3 +116,4 @@ Route::get('/forgot/reco','App\Http\Controllers\ValidarController@reco');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
