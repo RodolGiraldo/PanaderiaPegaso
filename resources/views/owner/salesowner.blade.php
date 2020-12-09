@@ -9,26 +9,41 @@
     <div class="row">
         <div class="col text-left form-inline">
             <a href="/admin/index" class="btn bg-primary text-white">Generar Reporte</a>
-            <form class="col form-inline">
-                <input class="form-control col-6" type="search" placeholder="Buscar por id de venta" aria-label="Search">
-                <button class="btn btn-outline-success col-2" type="submit">Buscar</button>
-            </form>
+            
         </div>
     </div>
     <br>
     <div class="row alert alert-success text-white">
         <div class="col">
+            
             <table class="table">
-                <thead>
-                    <td class="font-weight-bold">IdVenta</td>
-                    <td class="font-weight-bold">C_Cliente</td>
-                    <td class="font-weight-bold">C_Domiciliario</td>
-                    <td class="font-weight-bold">C_Vendedor</td>
-                    <td class="font-weight-bold">IdProducto</td>
-                    <td class="font-weight-bold">F_Venta</td>
-                    <td class="font-weight-bold">Precio Total</td>
-                    <td class="font-weight-bold">Hora Venta</td>
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Codigo Pedido</th>
+                        <th scope="col">Nombre Cliente</th>
+                        <th scope="col">Direccion de entrega</th>
+                        <th scope="col">Nombre Producto</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio Total</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Detalles</th>
+                    </tr>
                 </thead>
+                <tbody>
+                    @foreach ($pedidos as $item)
+                        <tr>
+                            <th scope="row">{{$item->idPedido}}</th>
+                            <td>{{$item->nombreCliente}}</td>
+                            <td>{{$item->direccionPedido}}</td>
+                            <td>{{$item->nombreProducto}}</td>
+                            <td>{{$item->cantidad}}</td>
+                            <td>{{$item->precioTotal}}</td>
+                            <td>{{$item->nombreEstado}}</td>
+                            <td>Btn-Detalles</td>
+                        </tr>
+                    @endforeach
+        
+                </tbody>
             </table>
         </div>
     </div>

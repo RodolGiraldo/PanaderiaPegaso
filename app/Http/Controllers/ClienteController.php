@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Hash;
 
 class ClienteController extends Controller
 {
@@ -77,7 +78,7 @@ class ClienteController extends Controller
         $cliente->idTipoIdentificacion = $request->get('idTipoIdentificacion');
         $cliente->cedulaCliente = $request->get('cedulaCliente');
         $cliente->emailCliente = $request->get('emailCliente');
-        $cliente->passwordCliente = $request->get('passwordCliente');
+        $cliente->passwordCliente = Hash::make($request->get('passwordCliente'));
 
 
         DB::select("select CrearCliente('$cliente->nombreCliente', '$cliente->apellidoCliente', '$cliente->telefonoCliente', '$cliente->generoCliente', $cliente->idTipoIdentificacion, $cliente->cedulaCliente, '$cliente->emailCliente', '$cliente->passwordCliente')");

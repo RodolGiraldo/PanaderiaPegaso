@@ -16,7 +16,21 @@ use App\Http\Controllers;
 
 
 Route::get('/owner', function () {
-    return view('owner/salesowner');
+    return view('owner/salesowner',[
+        'pedidos' => DB::select("select pe.\"idPedido\",pe.\"direccionPedido\",cl.\"nombreCliente\",pepo.\"cantidad\",es.\"nombreEstado\",pepo.\"precioTotal\",pro.\"nombreProducto\",es.\"nombreEstado\"
+        FROM pedidos pe 
+            INNER JOIN pedido_productos pepo
+                ON pe.\"idPedido\" = pepo.\"idPedido\"
+         INNER JOIN productos pro
+             ON pro.\"codigoProducto\" = pepo.\"codigoProducto\"
+         INNER JOIN estado_pedidos espe
+             ON espe.\"idPedido\" = pe.\"idPedido\" 
+         INNER JOIN estados es
+             ON es.\"codigoEstado\" = espe.\"codigoEstado\"
+         INNER JOIN clientes cl
+             ON cl.\"idCliente\" = pe.\"idCliente\"
+         ")
+    ]);
 });
 
 Route::get('/vendor', function(){
@@ -24,7 +38,21 @@ Route::get('/vendor', function(){
 });
 
 Route::get('/domiciliary',function(){
-    return view('domiciliary/index');
+    return view('domiciliary/index',[
+        'pedidos' => DB::select("select pe.\"idPedido\",pe.\"direccionPedido\",cl.\"nombreCliente\",pepo.\"cantidad\",es.\"nombreEstado\",pepo.\"precioTotal\",pro.\"nombreProducto\",es.\"nombreEstado\"
+        FROM pedidos pe 
+            INNER JOIN pedido_productos pepo
+                ON pe.\"idPedido\" = pepo.\"idPedido\"
+         INNER JOIN productos pro
+             ON pro.\"codigoProducto\" = pepo.\"codigoProducto\"
+         INNER JOIN estado_pedidos espe
+             ON espe.\"idPedido\" = pe.\"idPedido\" 
+         INNER JOIN estados es
+             ON es.\"codigoEstado\" = espe.\"codigoEstado\"
+         INNER JOIN clientes cl
+             ON cl.\"idCliente\" = pe.\"idCliente\"
+         where espe.\"codigoEstado\" = 1 or espe.\"codigoEstado\" = 2")
+   ]);
 });
 
 Route::get('/domiciliary/order',function(){
@@ -77,10 +105,14 @@ Route::resource('/productos', 'App\Http\Controllers\ProductoController');
 
 Route::resource('/clientes', 'App\Http\Controllers\ClienteController');
 
-Route::get('/search', 'App\Http\Controllers\ProductoController@BuscarProductoPorNombre');
+Route::get('admin/customer/search', 'App\Http\Controllers\ProductoController@BuscarProductoPorNombre');
 
 Route::resource('/usuarios', 'App\Http\Controllers\UsuarioController');
 
 Route::resource('/forgot','App\Http\Controllers\ValidarController');
 
 Route::get('/forgot/reco','App\Http\Controllers\ValidarController@reco');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

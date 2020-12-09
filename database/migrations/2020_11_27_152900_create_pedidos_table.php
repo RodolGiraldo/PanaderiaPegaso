@@ -17,10 +17,10 @@ class CreatePedidosTable extends Migration
             $table->id('idPedido');
             $table->string('direccionPedido');
             $table->unsignedBigInteger('codigoFormaPago');
-            $table->unsignedBigInteger('cedulaCliente');
+            $table->unsignedBigInteger('idCliente');
             $table->unsignedBigInteger('cedulaDomiciliario');
             $table->foreign('codigoFormaPago')->references('codigoFormaPago')->on('forma_pagos');
-            $table->foreign('cedulaCliente')->references('cedulaCliente')->on('clientes');
+            $table->foreign('idCliente')->references('idCliente')->on('clientes');
             $table->foreign('cedulaDomiciliario')->references('cedulaDomiciliario')->on('domiciliarios');
             $table->timestamps();
         });

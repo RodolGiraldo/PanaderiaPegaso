@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
@@ -43,7 +44,7 @@ class UsuarioController extends Controller
         $usuario = new Usuario();
 
         $usuario->emailUsuario = $request->get('emailUsuario');
-        $usuario->passwordUsuario = $request->get('passwordUsuario');
+        $usuario->passwordUsuario = Hash::make($request->get('passwordUsuario'));
         $usuario->idTipoUsuario = $request->get('idTipoUsuario');
 
         DB::select("select CrearUsuario(' $usuario->emailUsuario','$usuario->passwordUsuario',$usuario->idTipoUsuario)");
@@ -87,7 +88,7 @@ class UsuarioController extends Controller
 
         $usuario->idUsuario = $idUsuario;
         $usuario->emailUsuario = $request->get('emailUsuario');
-        $usuario->passwordUsuario = $request->get('passwordUsuario');
+        $usuario->passwordUsuario = Hash::make($request->get('passwordUsuario'));
         $usuario->idTipoUsuario = $request->get('idTipoUsuario');
 
         DB::select("select ActualizarUsuario($usuario->idUsuario, '$usuario->emailUsuario', '$usuario->passwordUsuario',$usuario->idTipoUsuario)");

@@ -2,57 +2,91 @@
 
 @section('content')
 
-    <div class="row text-center alert bg-secondary text-white">
-        <div class="col">
-            <h1>Crear usuario</h1>
-        </div>
-    </div>
-    <br>
-    <div class="row alert alert-success">
-        <div class="col">
-            <div class="col">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        @foreach ($errors->all() as $error)
-                            - {{ $error }}<br>
-                        @endforeach
-                    </div>
-                @endif
-            </div>
-            <form action="/usuarios" method="POST">
-                @csrf
-                <div class="form-row">
-                    <div class="form-group font-weight-bold">
-                        <label for="emailUsuario">Correo electronico:</label>
-                        <input type="email" class="form-control" id="emailUsuario" name="emailUsuario"  placeholder="example@correo.com" value="{{ old('emailUsuario')}}">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group font-weight-bold">
-                        <label for="names">Contraseña:</label>
-                    <input type="password" class="form-control" id="names" name="names" value="{{old('passwordUsuario')}}">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group font-weight-bold">
-                        <label for="idTipoUsuario">Tipo de usuario: </label>
-                        <div class="form-group col">
-                            <select name="idTipoUsuario">
-                                <option value="">Seleccionar...</option>
-                                <option value="1">Cliente</option>
-                                <option value="2">Administrador</option>
-                                <option value="3">Dueño</option>
-                                <option value="4">Domiciliario</option>
-                                <option value="5">Vendedor</option>
-                            </select>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Register') }}</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
-                    </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="idTipoUsuario" class="col-md-4 col-form-label text-md-right">Tipo de usuario: </label>
+                            <div class="form-group font-weight-bold ">
+                                <div class="form-group col">
+                                    <select name="idTipoUsuario" id="idTipoUsuario">
+                                        <option value="" disabled>Seleccionar...</option>
+                                        <option value="1">Cliente</option>
+                                        <option value="2">Administrador</option>
+                                        <option value="3">Dueño</option>
+                                        <option value="4">Domiciliario</option>
+                                        <option value="5">Vendedor</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary" href="/admin">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <a href="/usuarios" class="btn btn-danger">Cancelar</a>
-                <button type="submit" class="btn btn-primary">Guardar</button>
-            </form>
+            </div>
         </div>
     </div>
-    <br>
-    <br>
+</div>
 @endsection

@@ -9,8 +9,8 @@
     <div class="row">
         <div class="col text-left form-inline">
             <a href="/administrador" class="btn bg-danger text-white">Regresar</a>
-            <form class="col form-inline">
-                <input class="form-control col-10" type="search" placeholder="Buscar por nombre" aria-label="Search">
+            <form class="col form-inline" action="/admin/customer/search" method="GET">
+                <input class="form-control col-10" name="nombreProducto" id="nombreProducto" type="search" placeholder="Buscar por nombre" aria-label="Search">
                 <button class="btn btn-outline-success col-2" type="submit">Buscar</button>
             </form>
             <a href="/productos/create" class="btn bg-info text-white">Crear nuevo producto</a>

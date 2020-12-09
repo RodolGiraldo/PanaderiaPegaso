@@ -29,15 +29,15 @@
                 <tbody>
                     @foreach ($usuarios as $usuario)
                         <tr>
-                        <td>{{$usuario->idUsuario}}</td>
-                        <td>{{$usuario->emailUsuario}}</td>
+                        <td>{{$usuario->id}}</td>
+                        <td>{{$usuario->email}}</td>
                         @foreach ($tipos as $tipo)
-                            @if ($tipo->idTipoUsuario == $usuario->idTipoUsuario)
+                            @if ($tipo->idTipoUsuario == $usuario->id)
                                 <td>{{$tipo->nombreTipoUsuario}}</td>
                             @endif
                         @endforeach
                         <td>
-                            <a class="btn btn-warning" href="/usuarios/{{ $usuario->idUsuario }}/edit">Edit</a>
+                            <a class="btn btn-warning" href="/usuarios/{{ $usuario->id }}/edit">Edit</a>
                         </td>
                         </tr>
                     @endforeach

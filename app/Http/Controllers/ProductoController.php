@@ -18,7 +18,7 @@ class ProductoController extends Controller
         return view('admin/productsadmin.indexproducts', [
             'productos' =>DB::select('select * from ListarProductos()')
         ]);
-        return $this->BuscarProductoPorNombre();
+        
     }
 
     /**
@@ -108,11 +108,11 @@ class ProductoController extends Controller
         DB::select("select EliminarProducto($codigoProducto)");
         return back();
     }
-    public function BuscarProductoPorNombre(Request $nombreProducto)
+    public function BuscarProductoPorNombre(Request $request)
     {
-        $nombre = $nombreProducto->get("nombreProducto");
-        return view('admin/productsadmin.indexproducts', [
-            'productos' => DB::select("select * from BuscarNombreProducto('$nombreProducto')")
+        $nombre = $request->get("nombreProducto");
+        return view('admin/productsadmin/indexproducts', [
+            'productos' => DB::select("select * from BuscarNombreProducto('$nombre')")
         ]);
     }
 }
