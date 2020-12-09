@@ -55,9 +55,9 @@ Route::get('/domiciliary',function(){
    ]);
 });
 
-Route::get('/domiciliary/order',function(){
-    return view('domiciliary/detallepedido');
-});
+// Route::get('/domiciliary/order',function(){
+//     return view('domiciliary/detallepedido');
+// });
 
 /* Rutas para redireccion de las vistas del admin */
 Route::get('/admin', 'App\Http\Controllers\AdminController@index');
@@ -99,7 +99,7 @@ Route::get('/','App\Http\Controllers\Auth\LoginController@showLoginForm');
 
 Route::post('/login','App\Http\Controllers\LoginController@login');
 
-
+Route::post('/domiciliary/order','App\Http\Controllers\DomiciliarioController@store');
 
 Route::resource('/productos', 'App\Http\Controllers\ProductoController');
 

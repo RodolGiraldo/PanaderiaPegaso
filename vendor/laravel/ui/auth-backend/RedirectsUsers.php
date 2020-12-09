@@ -54,12 +54,10 @@ trait RedirectsUsers
     public function redirectPathRe()
     {
 
-        return back();
-        // //condicionales para validar tipo usuario
-        // if (method_exists($this, 'redirectTo')) {
-        //     return $this->redirectTo();
-        // }
-
-        // return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
+        //condicionales para validar tipo usuario
+        if (method_exists($this, 'redirectTo')) {
+            return $this->redirectTo();
+        }
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
     }
 }

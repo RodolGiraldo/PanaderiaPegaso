@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Domiciliario;
 use Illuminate\Http\Request;
+use DB;
 
 class DomiciliarioController extends Controller
 {
@@ -35,7 +36,10 @@ class DomiciliarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $idPedido = $request->get('idProducto');
+        DB::select("select * from actualizarEstadoPedido($idPedido,3)");
+
+        return redirect('/customer');
     }
 
     /**

@@ -1,6 +1,6 @@
 @extends('layouts.layoutdomiciliary')
 @section('content')
-    
+
     <div class="card text-center">
         <div class="card-body">
             <h5 class="card-title">Domicilios disponibles</h5>
@@ -23,15 +23,24 @@
         <tbody>
             @foreach ($pedidos as $item)
                 <tr>
-                    <th scope="row">{{$item->idPedido}}</th>
-                    <td>{{$item->nombreCliente}}</td>
-                    <td>{{$item->direccionPedido}}</td>
-                    <td>{{$item->nombreProducto}}</td>
-                    <td>{{$item->cantidad}}</td>
-                    <td>{{$item->precioTotal}}</td>
-                    <td>{{$item->nombreEstado}}</td>
-                    <td>Btn-Detalles</td>
+                    <th scope="row">{{ $item->idPedido }}</th>
+                    <td>{{ $item->nombreCliente }}</td>
+                    <td>{{ $item->direccionPedido }}</td>
+                    <td>{{ $item->nombreProducto }}</td>
+                    <td>{{ $item->cantidad }}</td>
+                    <td>{{ $item->precioTotal }}</td>
+                    <td>{{ $item->nombreEstado }}</td>
+                    <td>
+                        <form action="/domiciliary/order" method="post">
+                            @csrf
+                            <input type="hidden" name="idProducto" id="idProducto" value="{{ $item->idPedido }}">
+                            <button type="submit" class="btn btn-primary">Detalles</button>
+                        </form>
+                    </td>
+
+
                 </tr>
+
             @endforeach
 
         </tbody>
